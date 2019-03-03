@@ -1,0 +1,30 @@
+
+To stop database
+sudo -u postgres /Library/PostgreSQL/11/bin/pg_ctl -D /Library/PostgreSQL/11/data stop
+
+To see ports occupied
+netstat -anp tcp | grep LISTEN
+
+To see list of pgAdmin started
+lsof -i -P -n | grep LISTEN
+
+To start app via docker-compose in detached mode
+docker-compose up -d
+
+To become postgres user in Mac
+sudo -i -u postgres
+
+To see volumes active
+docker volume ls
+
+To start db-container via docker
+docker run -d --rm --volume=$HOME/docker/volumes/postgres/data:/var/lib/postgresql/data \
+  --name my-postgres-container -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres \
+  -p 5432:5432 stratilat19/postgres:11-alpine
+
+To start psql inside db-container
+docker exec -it my-postgres-container psql -U postgres
+inside psql: show data_directory;
+
+To start web-container after db-container via docker
+docker run -d --name my-web-container -p 8080:8080 stratilat19/spring-mvc-demo:1.0-SNAPSHOT

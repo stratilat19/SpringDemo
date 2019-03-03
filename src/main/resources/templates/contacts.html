@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <div th:replace="fragments/head :: copy('Контакты - SpringMvcDemo')"></div>
+    <body>
+        <div th:replace="fragments/header :: copy('Контакты')"></div>
+        <section>
+            <div th:replace="fragments/leftmenu :: copy(mainClass='', helloClass='', priceClass='', contactClass='inactive')"></div>
+            <main class="contacts">
+                <div class="container">
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <h4>Задайте нам вопрос</h4>
+                            <form method="post">
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2 col-form-label">Ваше имя:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Ваше имя">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-2 col-form-label">Ваш email:</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="example@mail.ru">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="recipient-phone" class="col-sm-2 col-form-label">Ваш телефон:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="recipient-phone" class="form-control" name="phone">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="message-text" class="col-sm-2 col-form-label">Сообщение:</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="message" id="message-text" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div align="center">
+                                    <button type="submit" class="btn btn-primary">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm">
+                            <h5 style="color:darkblue">Наши координаты</h5>
+                            <strong>Центральный офис:</strong><br>
+                            113162 Москва<br>
+                            ул. Тверская 7<br>
+                            tel: +7 915 789 12 34<br>
+                            Email: aaa@mail.ru<br><br>
+                            <strong>Филиал в Нью-Йорке:</strong><br>
+                            St.John Blvd 116<br>
+                            77902 USA<br>
+                            tel: +1 345 098 43 23<br>
+                            Email: aaa@gmail.com<br><br>
+                            <h5 style="color:darkblue">Платёжные реквизиты</h5>
+                            <strong>Счёт №: </strong> 1111 2222 3333 4444<br>
+                            <strong>BIC: </strong> 1234AAA980
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <div th:replace="fragments/footer :: copy"></div>
+    </body>
+</html>
